@@ -1,5 +1,14 @@
+import sys
+import os
+
+# [치트키] Streamlit 서버가 부품을 못 찾으면 코드가 알아서 강제 설치하게 만듦
+try:
+    import OpenDartReader
+except ModuleNotFoundError:
+    os.system(f"{sys.executable} -m pip install OpenDartReader")
+    import OpenDartReader
+
 import streamlit as st
-import OpenDartReader
 import pandas as pd
 
 API_KEY = 'c0aacbfba7404217704ef01f2bdce5467a353fce'
